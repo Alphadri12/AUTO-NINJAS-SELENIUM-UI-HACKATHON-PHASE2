@@ -1,185 +1,153 @@
 package stepDefinitions;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-
-import io.cucumber.java.en.*;
-import junit.framework.Assert;
-import pageObjects.BatchPage;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import pageObjects.BatchPageObjects;
 
 public class BatchSteps {
 	
-	public WebDriver driver;
-	public BatchPage bp;
-	
-	
-	@Given("Admin/User/Staff Logged on to LMS Website")
-	public void admin_user_staff_logged_on_to_lms_website() {
-		//WebDriverManager.chromedriver().setup();
-				System.setProperty("webdriver.chrome.driver", "/Users/13095/eclipse-workspace/LMSUI-HACKATHON-BDDCUCUMBER/Drivers/chrome driver/chromedriver.exe");
-				WebDriver driver=new ChromeDriver();
-				ChromeOptions options=new ChromeOptions();
-				options.setHeadless(true);
-				driver=new ChromeDriver(options);
-	    
+	BatchPageObjects batchpgObj;
+
+	@Given("Admin is on Manage Batch page")
+	public void admin_is_on_manage_batch_page() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
 	}
 
-	@When("Admin/User/Staff Clicks on Batch button")
-	public void admin_user_staff_clicks_on_batch_button() {
-		bp.batchBtnClk();
-	    
+	@When("Admin Clicks on any Delete button located on the right side")
+	public void admin_clicks_on_any_delete_button_located_on_the_right_side() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
 	}
 
-	@Then("Admin/User/Staff see header text as {string}")
-	public void admin_user_staff_see_header_text_as(String string) {
-	 bp.toChkVisibilityOfHeader();
-	 Assert.assertEquals(string, driver.getTitle());
-	 
+	@Then("Admin see header text as \"Delete Confirm")
+	public void admin_see_header_text_as_delete_confirm() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
 	}
-	@When("Admin/User/Staff is on Manage Batch page")
+
+	@When("Admin Clicks on Yes  button")
+	public void admin_clicks_on_yes_button() {
+	    batchpgObj.DeleteIndividualRecord_ConfirmYes();
+	}
+
+	
+	@When("Admin Clicks on No button")
+	public void admin_clicks_on_no_button() {
+		batchpgObj.DeleteIndividualRecord_ConfirmNo();
+	}
+
+	@Then("Admin can see Program Name not deleted")
+	public void admin_can_see_program_name_not_deleted() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@Given("Admin\\/User\\/Staff  is on Manage Batch page")
 	public void admin_user_staff_is_on_manage_batch_page() {
-	    
-		driver.get(null); /*will be null as no working URl for this UI*/
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
 	}
 
-	@Then("Admin/User/Staff see  Footer text as {string}")
-	public void admin_user_staff_see_footer_text_as(String string) {
-		
-		bp.toChkVisibilityOfFooter();
-		Assert.assertEquals(string, driver.getTitle());
-	    
-	}
-	@Then("Admin/User/Staff see the text as {string}")
-	public void admin_user_staff_see_the_text_as(String string) {
-		
-	    bp.toChkVisibilityOfPaginator();
-	    Assert.assertEquals(string, driver.getTitle());
-	}
-	
-
-	@When("Admin/User/Staff Clicks on Enabled paginator-next button")
-	public void admin_user_staff_clicks_on_enabled_paginator_next_button() {
-		
-	    bp.nextBtnClk();
+	@When("Admin\\/User\\/Staff Enters deleted  Program Name in Search")
+	public void admin_user_staff_enters_deleted_program_name_in_search() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
 	}
 
-	@Then("Admin/User/Staff see Paginator text as {string}")
-	public void admin_user_staff_see_paginator_text_as(String string) {
-		
-		bp.toChkVisibilityOfPaginator();
-		Assert.assertEquals(string, driver.getTitle());
-	    
-	}
-	
-	@When("Admin/User/Staff Clicks on Enabled paginator -prev button")
-	public void  admin_user_staff_clicks_on_enabled_paginator_prev_button() {
-	    bp.previousBtnClk();
-	}
-	
-	@When("Admin/User/Staff Clicks on Enabled paginator-last button")
-	public void admin_user_staff_clicks_on_enabled_paginator_last_button() {
-	    bp.lastBtnClk();
-	}
-	
-	@When("Admin/User/Staff Clicks on Enabled paginator -first button")
-	public void admin_user_staff_clicks_on_enabled_paginator_first_button() {
-	   bp.firstBtnClk();
-	}
-	@Then("Admin/User/Staff see the Search Text box has text as {string}.")
-	public void admin_user_staff_see_the_search_text_box_has_text_as(String string) {
-	   bp.textBxMsgVisiblity();
-	   Assert.assertEquals(string, driver.getTitle());
-	}
-	
-	@When("Admin/User/Staff enters (.*) to be searched")      /*(.*) is Regular expression */
-	public void admin_user_staff_enters_batch_name_to_be_searched(String batchname) {
-	    
+	@Then("Admin\\/User\\/Staff finds no results")
+	public void admin_user_staff_finds_no_results() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
 	}
 
-	@Then("Entries for the searched BatchName are shown.")
-	public void entries_for_the_searched_batch_name_are_shown() {
-	   
-	}
-	@Then("Entries for the searched Batch Description are shown.")
-	public void entries_for_the_searched_batch_description_are_shown() {
-	    
-	}
-	@Then("Entries for the searched Batch status are shown.")
-	public void entries_for_the_searched_batch_status_are_shown() {
-	    
-	}
-	/*@When("Admin/User/Staff enters (.*) to be searched")
-	public void admin_user_staff_enters_to_be_searched(Integer NoOfClasses) {
-	}    
-	*/
-
-	@Then("Entries for the searched No Of Classes are shown.")
-	public void entries_for_the_searched_no_of_classes_are_shown() {
-	    
-	}
-	
-	@Then("Entries for the searched Program Name are shown.")
-	public void entries_for_the_searched_program_name_are_shown() {
-	    
-	}
-	
-	@When("Admin/User/Staff Clicks on Batch Name Ascending Arrow")
-	public void admin_user_staff_clicks_on_batch_name_ascending_arrow() {
-	    bp.ascendingOrderClk();
+	@Given("User\\/Staff is on Manage Batch page")
+	public void user_staff_is_on_manage_batch_page() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
 	}
 
-	@Then("Admin/User/Staff see the Batch Name displayed in Ascending order")
-	public void admin_user_staff_see_the_batch_name_displayed_in_ascending_order() {
-	    
-		
-	}
-	
-	@When("Admin/User/Staff Clicks on Batch Description Ascending Arrow")
-	public void admin_user_staff_clicks_on_batch_description_ascending_arrow() {
-		bp.ascendingOrderClk();
+	@When("User\\/Staff Clicks on Delete buttton")
+	public void user_staff_clicks_on_delete_buttton() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
 	}
 
-	@Then("Admin/User/Staff see the Batch Description displayed in Ascending order")
-	public void admin_user_staff_see_the_batch_description_displayed_in_ascending_order() {
-	    
-	}
-	
-	@When("Admin/User/Staff Clicks on Batch Status Ascending Arrow")
-	public void admin_user_staff_clicks_on_batch_status_ascending_arrow() {
-	    bp.ascendingOrderClk();
-
+	@Then("User\\/Staff see a Error message \"Only Admin have Access")
+	public void user_staff_see_a_error_message_only_admin_have_access() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
 	}
 
-	@Then("Admin/User/Staff see the Batch Status displayed in Ascending order")
-	public void admin_user_staff_see_the_batch_status_displayed_in_ascending_order() {
-	    
-	   
+	@Given("Admin\\/User\\/Staff Logged on to LMS Website")
+	public void admin_user_staff_logged_on_to_lms_website() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
 	}
 
-	@When("Admin/User/Staff Clicks on No Of Classess Ascending Arrow")
-	public void admin_user_staff_clicks_on_no_of_classess_ascending_arrow() {
-		bp.batchClasses();
-	    
+	@Then("Admin\\/User\\/Staff see the Delete button on the top left hand side as Disabled")
+	public void admin_user_staff_see_the_delete_button_on_the_top_left_hand_side_as_disabled() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
 	}
 
-	@Then("Admin/User/Staff see the No Of Classes displayed in Ascending order")
-	public void admin_user_staff_see_the_no_of_classes_displayed_in_ascending_order() {
-	    
+	@When("Admin\\/User\\/Staff selects more than one Batch Name using checkbox")
+	public void admin_user_staff_selects_more_than_one_batch_name_using_checkbox() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
 	}
 
-	@When("Admin/User/Staff Clicks on Program Name Ascending Arrow")
-	public void admin_user_staff_clicks_on_program_name_ascending_arrow() {
-	    
+	@Then("Admin\\/User\\/Staff see the Delete button on the top left hand side as Enabled")
+	public void admin_user_staff_see_the_delete_button_on_the_top_left_hand_side_as_enabled() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
 	}
 
-	@Then("Admin/User/Staff see the Program Name displayed in Ascending order")
-	public void admin_user_staff_see_the_program_name_displayed_in_ascending_order() {}
+	@Given("Admin selects more than one Batch Name using checkbox")
+	public void admin_selects_more_than_one_batch_name_using_checkbox() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
 
-	
-	
-	
-	
+	@When("Admin Clicks on Enabled Delete button on the top left hand side")
+	public void admin_clicks_on_enabled_delete_button_on_the_top_left_hand_side() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
 
+	@Given("Admin Clicks on Enabled Delete button after selecting  more than one Batch Name")
+	public void admin_clicks_on_enabled_delete_button_after_selecting_more_than_one_batch_name() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
 
+	@Then("Admin see Success message \"\"Program Deleted Succesfully")
+	public void admin_see_success_message_program_deleted_succesfully() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@Then("Admin can see Program Names not deleted")
+	public void admin_can_see_program_names_not_deleted() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@When("Admin\\/User\\/Staff Enters deleted  Program Names in Search")
+	public void admin_user_staff_enters_deleted_program_names_in_search() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@Given("User\\/Staff selects more than one Batch  Name using checkbox")
+	public void user_staff_selects_more_than_one_batch_name_using_checkbox() {
+	    batchpgObj.DeleteMultipleRecords_ConfirmYes();
+	}
+
+	@When("User\\/Staff Cicks on Enabled Delete button on the top left hand side")
+	public void user_staff_cicks_on_enabled_delete_button_on_the_top_left_hand_side() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
 }

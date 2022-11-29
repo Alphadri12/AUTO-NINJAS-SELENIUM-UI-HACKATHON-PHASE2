@@ -1,82 +1,61 @@
-# User module: Last 14 scenarios as per excel sheet row no 42-55.
-Feature: Label Text
+Feature: Header Add New User Functionality
+Scenario:Validate the presence of Add new user button
+			Given Admin/User/Staff is on any page after Login
+   	 	When  Admin/User/Staff is on the Manage user page after clicking User Tab
+     	Then  Admin/User/Staff should see the button with text "+ icon and Add New User"
+     	
+Scenario: Verify the functionality of Add new user button
+			Given Admin/User/Staff is on Manage user page
+			When Admin/User/Staff clicks Add New User
+			Then Admin/User/Staff should see the "User details" dialog box
 
-  Background: common steps
-    Given Admin/User/Staff is on "User Details" window
-
-  Scenario: Verify the presence of Label Texts
-    Given Admin/User/Staff is on Manage user page
-    When Admin/User/Staff clicks Add new user button
-    Then Admin/User/Staff should see the placeholders with Text As "First name","Middle name", "Last name","Email adress","Phone no", "Address","City", "State","Postal Code","Program","UG Program","PG Program","Skill","Experience","Admin/User/Staff Role","Visa status","Batch","Comments"
-
-  Scenario: Verify drop down menu for state
-    When Admin/User/Staff clicks the drop down icon for state
-    Then Admin/User/Staff should select from the drop down menu for state
-
-  Scenario: Verify drop down menu for user role
-    When Admin/User/Staff clicks the drop down icon for User Role
-    Then Admin/User/Staff should select from the drop down menu for user role
-
-  Scenario Outline: Validating the User Details window with all fields empty
-    When Admin/User/Staff clicks submit button with all details empty
-    Then Admin/User/Staff should see a Error message <message>
-
-    Examples: 
-      | message                          |
-      | Mandatory Fields cannot be empty |
-
-  Scenario Outline: Adding new User
-    When Admin/User/Staff clicks Submit button by entering all valid values in required fields
-    Then Admin/User/Staff  see Success message  <successmessage>
-
-    Examples: 
-      | successmessage                        |
-      | New User Created is  Should be Saved. |
-
-  Scenario Outline: Validating the User Details window with few fields empty
-    When Admin/User/Staff clicks on Submit button after entering  Few Field details
-    Then Admin/User/Staff see error message <errormessage>
-
-    Examples: 
-      | errormessage              |
-      | Name is required          |
-      | Email address is required |
-      | State is required         |
-
-  Scenario Outline: Validating the Email address
-    When Admin/User/Staff clicks on Submit button after entering <em>
-    Then Admin/User/Staff see error message invalid <invalidmsg>
-
-    Examples: 
-      | invalidmsg            | em       |
-      | invalid email address | xyz@.com |
-
-  Scenario: Validating the presence of Address2 button
-    When Admin/User/Staff clicks Add new user button
-    Then Admin/User/Staff should see the button with text "+ Add C/O, Apt, Suite, Unit"
-
-  Scenario Outline: Validating the Phone number
-    When Admin/User/Staff Enters more than ten <num> digits
-    Then Admin/User/Staff see error message "Invalid Input"
-
-    Examples: 
-      | num          |
-      |  96000864381 |
-      | 129786549111 |
-
-  Scenario Outline: Validating Zip Code
-    When Admin/User/Staff Enters more than 5<digits> digits
-    Then Admin/User/Staff see error message "Invalid Input"
-
-    Examples: 
-      | digits  |
-      | 9563012 |
-      |  956301 |
-
-  Scenario: Validating State dropdown
-    When Admin/User/Staff clicks on state dropdown
-    Then Admin/User/Staff see list of states in Alphabetical Order
-
-  Scenario: Validating UG Program Dropdown
-    When Admin/User/Staff clicks on UG Program dropdown
-    Then Admin/User/Staff see list of UG Program
+Scenario: Validating Table header
+    Given Admin/User/Staff is on any page after Login
+    When Admin/User/Staff is on the Manage user page after clicking User
+    Then Admin/User/Staff should see the table header as Empty checkbox-icon,ID with sort icon, Name with Sort icon, Email Address with sort icon, Contact Batch with sort icon, Skill with Sort icon, Edit/Delete as column names
+           
+Scenario: Verify the functionality of sort icon present in table header
+      Given  Verify the functionality of sort icon present in table header
+      When   Admin/User/Staff table is displayed in manage user page
+      Then   Admin/User/Staff clicks sort icon in table header
+      
+Scenario: Check box in table header
+    Given  Admin/User/Staff table is displayed in manage user page
+    When   Admin/User/Staff checks empty checkbox in header
+    Then   Check box in all the rows of user table should be checked
+    Given  Admin/User/Staff table is displayed in manage user page
+    When   Admin/User/Staff unchecks checkbox in header
+    Then   Check box in all the rows of user table should be unchecked
+    
+Scenario: Verify the presence of Delete icon in manage user page
+      Given  Admin/User/Staff is on any page after Login
+      When   Admin/User/Staff is on the Manage user page after clicking User Tab
+      Then   Admin/User/Staff should see the delete icon at the top left corner of the user table 
+      
+Scenario: Behaviour of Delete icon when no rows unchecked
+   Given  Admin/User/Staff table is displayed in manage user page
+   When   No rows is checked
+   Then   Delete icon at the top left corner of the user table disabled
+   
+Scenario: Behaviour of Delete icon when rows checked
+     Given  Admin/User/Staff table is displayed in manage user page
+     When   Admin/User/Staff checks the rows in user table
+     Then   Delete icon at the top left corner of the user table enabled
+     Given  Admin/User/Staff checks the rows in user table
+     When   Admin/User/Staff clicks the delete icon at the top left corner of user table
+     Then   Confirm dialog box should be displayed with Text "Are you sure you want to delete the selected Admin/User/Staffs?" , button with text "No" , the button with text "yes" and close(X) icon
+            
+Scenario: Validating Confirm dialog box by selecting No
+     Given  Admin/User/Staff is in confirm dialog box after clicking delete icon
+     When   Admin/User/Staff clicks button with text "No"
+     Then   Selected rows should not be deleted and dialog box should be closed
+     
+Scenario: Validating Confirm dialog box by selecting Yes
+      Given  Admin/User/Staff is in confirm dialog box after clicking delete icon
+      When   Admin/User/Staff clicks button with text "Yes"
+      Then   Selected rows should be deleted and popup should be shown with success message "User deleted"
+ 
+ Scenario: Validating Confirm dialog box by clicking close(x) icon
+      Given  Admin/User/Staff is in confirm dialog box after clicking delete icon
+      When   Admin/User/Staff clicks the close(x) icon
+      Then   Confirm dialog box should be closed
