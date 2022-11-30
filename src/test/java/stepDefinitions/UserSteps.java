@@ -1,157 +1,180 @@
 package stepDefinitions;
 
-import org.openqa.selenium.WebDriver;
-
-import io.cucumber.java.en.*;
-import junit.framework.Assert;
-import pageObjects.UserPage;
-
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import pageObjects.UserPageObjects;
 
 public class UserSteps {
-	public WebDriver driver;
-	public UserPage ap;
 	
+	UserPageObjects userpgObj;
 	
-	@Given("Admin/User/Staff is on Manage user page")
-	public void admin_user_staff_is_on_manage_user_page() {
-	    driver.get(null); /* No working URl hence null*/
+	@Given("Admin\\/User\\/Staff is on any page after Login")
+	public void admin_user_staff_is_on_any_page_after_login() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
 	}
 
-	@When("Admin/User/Staff clicks Add new user button")
-	public void admin_user_staff_clicks_add_new_user_button() {
-		ap.addNewUserbtnClk();
-	    
+	@When("Admin\\/User\\/Staff is on the Manage user page after clicking User Tab")
+	public void admin_user_staff_is_on_the_manage_user_page_after_clicking_user_tab() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
 	}
 
-	@Then("Admin/User/Staff should see the placeholders with Text As {string},{string}, {string},{string},{string}, {string},{string}, {string},{string},{string},{string},{string},{string},{string},{string},{string},{string},{string}")
-	public void admin_user_staff_should_see_the_placeholders_with_text_as(String string, String string2, String string3, String string4, String string5, String string6, String string7, String string8, String string9, String string10, String string11, String string12, String string13, String string14, String string15, String string16, String string17, String string18) {
-	    ap.placeholderEntireDisplay();
-	    Assert.assertEquals(true, true);
-	    
-	}
-	@Given("Admin/User/Staff is on {string} window")
-	public void admin_user_staff_is_on_window(String string) {
-	    
-	}
-
-	@When("Admin/User/Staff clicks the drop down icon for state")
-	public void admin_user_staff_clicks_the_drop_down_icon_for_state() {
-		
-	    ap.stateDropdownBxArrow();
-	}
-
-	@Then("Admin/User/Staff should select from the drop down menu for state")
-	public void admin_user_staff_should_select_from_the_drop_down_menu_for_state() {
-		
-		Assert.assertEquals(true, true);
-	}
-	@When("Admin/User/Staff clicks the drop down icon for User Role")
-	public void admin_user_staff_clicks_the_drop_down_icon_for_user_role() {
-		
-		ap.userRoleDropdownBxArrow();
-}
-
-	@Then("Admin/User/Staff should select from the drop down menu for user role")
-	public void admin_user_staff_should_select_from_the_drop_down_menu_for_user_role() {
-		Assert.assertEquals(true, true);
-		
-	}
-	
-
-	@When("Admin/User/Staff clicks submit button with all details empty")
-	public void admin_user_staff_clicks_submit_button_with_all_details_empty() {
-	    ap.submitBtn();
-	}
-
-	@Then("Admin/User/Staff should see a Error message (.*)")
-	public void admin_user_staff_should_see_a_error_message(String message) {
-		Assert.assertFalse(message, true);
-	    
-	}
-	
-	@When("Admin/User/Staff clicks Submit button by entering all valid values in required fields")
-	public void admin_user_staff_clicks_submit_button_by_entering_all_valid_values_in_required_fields() {
-	    ap.submitBtn();
-	}
-
-	@Then("Admin/User/Staff  see Success message(.*)") /* is a regular expression*/
-	public void admin_user_staff_see_success_message(String successmessage) {
-		Assert.assertTrue(successmessage, true);
-	    
-	}
-	@When("Admin/User/Staff clicks on Submit button after entering Few Field details")
-	public void admin_user_staff_clicks_on_submit_button_after_entering_few_field_details(String fn,String ln,String cn,String pn) {
-		ap.submitBtn();
-		ap.fieldValidation(fn, ln, cn, pn);
-	    
-	}
-
-	@Then("Admin/User/Staff see error message (.*)") 
-	public void admin_user_staff_see_error_message(String errormessage) {
-		Assert.assertTrue(errormessage, true);
-	
-	}
-	
-	@When("Admin/User/Staff clicks on Submit button after entering {string}")
-	public void admin_user_staff_clicks_on_submit_button_after_entering_xyz_com(String em) {
-		ap.emailValidation(em);
-	    ap.submitBtn();
-	}
-
-	@Then("Admin/User/Staff see error message {string}")
-	public void admin_user_staff_see_error_message_invalid_invalid_email_address(String invalidmsg) {
-	    
-		Assert.assertTrue(invalidmsg, true);
-	}
-	
-	@Then("Admin/User/Staff should see the button with text {string}")
+	@Then("Admin\\/User\\/Staff should see the button with text {string}")
 	public void admin_user_staff_should_see_the_button_with_text(String string) {
-	    Assert.assertEquals(string, true);
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
 	}
-	
-	@When("Admin/User/Staff Enters more than {string} digits")
-	public void admin_user_staff_enters_more_than_digits(String num) {
-		ap.phoneNoValidation(num);
+
+	@Given("Admin\\/User\\/Staff is on Manage user page")
+	public void admin_user_staff_is_on_manage_user_page() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@When("Admin\\/User\\/Staff clicks Add New User")
+	public void admin_user_staff_clicks_add_new_user() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@Then("Admin\\/User\\/Staff should see the {string} dialog box")
+	public void admin_user_staff_should_see_the_dialog_box(String string) {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@When("Admin\\/User\\/Staff is on the Manage user page after clicking User")
+	public void admin_user_staff_is_on_the_manage_user_page_after_clicking_user() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@Then("Admin\\/User\\/Staff should see the table header as Empty checkbox-icon,ID with sort icon, Name with Sort icon, Email Address with sort icon, Contact Batch with sort icon, Skill with Sort icon, Edit\\/Delete as column names")
+	public void admin_user_staff_should_see_the_table_header_as_empty_checkbox_icon_id_with_sort_icon_name_with_sort_icon_email_address_with_sort_icon_contact_batch_with_sort_icon_skill_with_sort_icon_edit_delete_as_column_names() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@Given("Verify the functionality of sort icon present in table header")
+	public void verify_the_functionality_of_sort_icon_present_in_table_header() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@Then("Admin\\/User\\/Staff clicks sort icon in table header")
+	public void admin_user_staff_clicks_sort_icon_in_table_header() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@Given("Admin\\/User\\/Staff table is displayed in manage user page")
+	public void admin_user_staff_table_is_displayed_in_manage_user_page() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@When("Admin\\/User\\/Staff checks empty checkbox in header")
+	public void admin_user_staff_checks_empty_checkbox_in_header() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@Then("Check box in all the rows of user table should be checked")
+	public void check_box_in_all_the_rows_of_user_table_should_be_checked() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@When("Admin\\/User\\/Staff unchecks checkbox in header")
+	public void admin_user_staff_unchecks_checkbox_in_header() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@Then("Check box in all the rows of user table should be unchecked")
+	public void check_box_in_all_the_rows_of_user_table_should_be_unchecked() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@Then("Admin\\/User\\/Staff should see the delete icon at the top left corner of the user table")
+	public void admin_user_staff_should_see_the_delete_icon_at_the_top_left_corner_of_the_user_table() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@When("No rows is checked")
+	public void no_rows_is_checked() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@Then("Delete icon at the top left corner of the user table disabled")
+	public void delete_icon_at_the_top_left_corner_of_the_user_table_disabled() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@When("Admin\\/User\\/Staff checks the rows in user table")
+	public void admin_user_staff_checks_the_rows_in_user_table() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@Then("Delete icon at the top left corner of the user table enabled")
+	public void delete_icon_at_the_top_left_corner_of_the_user_table_enabled() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@When("Admin\\/User\\/Staff clicks the delete icon at the top left corner of user table")
+	public void admin_user_staff_clicks_the_delete_icon_at_the_top_left_corner_of_user_table() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@Then("Confirm dialog box should be displayed with Text {string} , button with text {string} , the button with text {string} and close\\(X) icon")
+	public void confirm_dialog_box_should_be_displayed_with_text_button_with_text_the_button_with_text_and_close_x_icon(String string, String string2, String string3) {
+	    // Write code here that turns the phrase above into concrete actions
+	    userpgObj.DeleteIndividualUserRecord_ConfirmNo();
+	}
+
+	@Given("Admin\\/User\\/Staff is in confirm dialog box after clicking delete icon")
+	public void admin_user_staff_is_in_confirm_dialog_box_after_clicking_delete_icon() {
+	    // Write code here that turns the phrase above into concrete actions
+	    userpgObj.DeleteIndividualUserRecord_ConfirmYes();
+	}
+
+	@When("Admin\\/User\\/Staff clicks button with text {string}")
+	public void admin_user_staff_clicks_button_with_text(String string) {
+	    // Write code here that turns the phrase above into concrete actions
 	    
 	}
-	
-	@When("Admin/User/Staff Enters more than {int} digits")
-	public void admin_user_staff_enters_more_than_digits(int digits) {
-	   
-	}
-	
-	@When("Admin/User/Staff clicks on state dropdown")
-	public void admin_user_staff_clicks_on_state_dropdown() {
-	    ap.stateDropdownBxArrow();
+
+	@Then("Selected rows should not be deleted and dialog box should be closed")
+	public void selected_rows_should_not_be_deleted_and_dialog_box_should_be_closed() {
+	    // Write code here that turns the phrase above into concrete actions
+	    userpgObj.DeleteMultipleUserRecords_ConfirmNo();
 	}
 
-	@Then("Admin/User/Staff see list of states in Alphabetical Order")
-	public void admin_user_staff_see_list_of_states_in_alphabetical_order() {
-	    
-	    Assert.assertTrue(driver.getTitle(), true);
-	}
-	
-	@When("Admin/User/Staff clicks on UG Program dropdown")
-	public void admin_user_staff_clicks_on_ug_program_dropdown() {
-	    
-		ap.ugProgramDisplay();
+	@Then("Selected rows should be deleted and popup should be shown with success message {string}")
+	public void selected_rows_should_be_deleted_and_popup_should_be_shown_with_success_message(String string) {
+	    // Write code here that turns the phrase above into concrete actions
+	    userpgObj.DeleteMultipleUserRecords_ConfirmYes();
 	}
 
-	@Then("Admin/User/Staff see list of UG Program")
-	public void admin_user_staff_see_list_of_ug_program() {
-		
-		Assert.assertTrue(driver.getTitle(), true);
-	   
+	@When("Admin\\/User\\/Staff clicks the close\\(x) icon")
+	public void admin_user_staff_clicks_the_close_x_icon() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
 	}
 
-	
-
-	
-	
-	
-	   
-		
+	@Then("Confirm dialog box should be closed")
+	public void confirm_dialog_box_should_be_closed() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
 	}
 
-
-
+}
